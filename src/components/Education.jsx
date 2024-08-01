@@ -45,6 +45,16 @@ function Education() {
                 className="degree" 
                 name="degree"
                 onClick = {handleClick} />
+            <label htmlFor="startDate">Start Date: </label>
+            <input type="date"
+                className="startDate"
+                name="startDate"
+                onChange={handleChange}/>
+            <label htmlFor="endDate">End Date: </label>
+            <input type="date"
+                className="endDate"
+                name="endDate"
+                onChange={handleChange} />
             <button className="submitButton" type="submit">SUBMIT</button>
         </form>
     )
