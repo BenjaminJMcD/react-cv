@@ -12,7 +12,7 @@ function Form() {
         <h1 className="education">Education</h1>
         <Education />
         <h1 className="experience">Work Experience</h1>
-        {/* <Experience /> */}
+        <Experience />
     </div>
     )
 }
