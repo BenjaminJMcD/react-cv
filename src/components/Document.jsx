@@ -1,6 +1,12 @@
 import React from "react";
 import { useState } from "react";
 
-export default function Document() {
-    
+const Document = ({name}) => {
+    return (
+        <div>
+            <p>{name}</p>
+        </div>
+    )
 }
+
+export default Document;

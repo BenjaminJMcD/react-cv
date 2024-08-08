@@ -3,12 +3,22 @@ import { useState } from "react";
 import BasicInfo from "./BasicInfo";
 import Education from "./Education";
 import Experience from "./Experience";
+import Document from "./Document";
 
 function Form() {
+
+    const [basicInfo, setBasicInfo] = useState("");
+    const [educationInfo, setEducationInfo] = useState("");
+    const [experienceInfo, setExperienceInfo] = useState("");
+
     return (
     <div>
         <h1 className="basicInfo">General Information</h1>
-        <BasicInfo />
+        <BasicInfo
+            formData = {basicInfo}
+            setFormData = {setBasicInfo}
+
+        />
         <h1 className="education">Education</h1>
         <Education />
         <h1 className="experience">Work Experience</h1>

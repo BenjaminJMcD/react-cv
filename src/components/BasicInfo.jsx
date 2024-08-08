@@ -1,15 +1,9 @@
 import React from "react"
 import { useState } from "react"
+import Document from "./Document"
 
 
-function BasicInfo() {
-
-    const [formData, setFormData]=useState({
-        firstName: "",
-        lastName: "",
-        email: "",
-        phone: "",
-    })
+function BasicInfo ({formData, setFormData}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -40,40 +34,43 @@ function BasicInfo() {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="firstName">First Name: </label>
-            <input type="text"
-                className="firstName"
-                name = "firstName"
-                required
-                value = {formData.firstName}
-                onChange={handleChange} />
-            <label htmlFor="lastName">Last Name: </label>
-            <input type="text" 
-                className="lastName"
-                name="lastName"
-                required
-                value = {formData.lastName}
-                onChange={handleChange} />
-            <label htmlFor="email">Email: </label>
-            <input type="email" 
-                className="email" 
-                name="email"
-                required
-                value = {formData.email}
-                onChange = {handleChange} />
-            <label htmlFor="phone">Phone: </label>
-            <input type="tel"
-                placeholder="(123) 456 7890" 
-                pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}"
-                className="phoneNumber"
-                required
-                name="phone"
-                value = {formData.phone}
-                onChange={handleInput}
-                 />
-            <button className="submitButton" type="submit">SUBMIT</button>
-        </form>
+        <div>
+            <form onSubmit={handleSubmit}>
+                <label htmlFor="firstName">First Name: </label>
+                <input type="text"
+                    className="firstName"
+                    name = "firstName"
+                    required
+                    value = {formData.firstName}
+                    onChange={handleChange} />
+                <label htmlFor="lastName">Last Name: </label>
+                <input type="text"
+                    className="lastName"
+                    name="lastName"
+                    required
+                    value = {formData.lastName}
+                    onChange={handleChange} />
+                <label htmlFor="email">Email: </label>
+                <input type="email"
+                    className="email"
+                    name="email"
+                    required
+                    value = {formData.email}
+                    onChange = {handleChange} />
+                <label htmlFor="phone">Phone: </label>
+                <input type="tel"
+                    placeholder="(123) 456 7890"
+                    pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}"
+                    className="phoneNumber"
+                    required
+                    name="phone"
+                    value = {formData.phone}
+                    onChange={handleInput}
+                     />
+                <button className="submitButton" type="submit">SUBMIT</button>
+            </form>
+        </div>
+
     )
 
 }
