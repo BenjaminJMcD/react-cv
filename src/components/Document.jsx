@@ -1,10 +1,14 @@
 import React from "react";
 import { useState } from "react";
 
-const Document = ({name}) => {
+const Document = ({info}) => {
     return (
         <div>
-            <p>{name}</p>
+            <p>{info.firstName}</p>
+            <p>{info.lastName}</p>
+            <p>{info.email}</p>
+            <p>{info.phone}</p>
+
         </div>
     )
 }

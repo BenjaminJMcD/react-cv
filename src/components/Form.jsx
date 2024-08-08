@@ -7,9 +7,15 @@ import Document from "./Document";
 
 function Form() {
 
-    const [basicInfo, setBasicInfo] = useState("");
+    const [basicInfo, setBasicInfo] = useState({
+        firstName: "First Name",
+        lastName: "Last Name",
+        email: "email@any.com",
+        phone: "(123) 456-7890"
+    });
     const [educationInfo, setEducationInfo] = useState("");
     const [experienceInfo, setExperienceInfo] = useState("");
+
 
     return (
     <div>
@@ -23,6 +29,9 @@ function Form() {
         <Education />
         <h1 className="experience">Work Experience</h1>
         <Experience />
+        <Document 
+            info={basicInfo}
+        />
     </div>
     )
 }
