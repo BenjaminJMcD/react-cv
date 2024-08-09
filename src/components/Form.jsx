@@ -8,13 +8,25 @@ import Document from "./Document";
 function Form() {
 
     const [basicInfo, setBasicInfo] = useState({
-        firstName: "First Name",
-        lastName: "Last Name",
-        email: "email@any.com",
-        phone: "(123) 456-7890"
+        firstName: "",
+        lastName: "",
+        email: "",
+        phone: ""
     });
-    const [educationInfo, setEducationInfo] = useState("");
-    const [experienceInfo, setExperienceInfo] = useState("");
+    const [educationInfo, setEducationInfo] = useState({
+        school: "",
+        study: "",
+        degree: false,
+        startDate: "",
+        endDate: ""
+    });
+    const [experienceInfo, setExperienceInfo] = useState({
+        company: "",
+        position: "",
+        responsibilities: "",
+        startDate: "",
+        endDate: ""
+    });
 
 
     return (
@@ -26,11 +38,19 @@ function Form() {
 
         />
         <h1 className="education">Education</h1>
-        <Education />
+        <Education
+            formData = {educationInfo}
+            setFormData = {setEducationInfo}
+        />
         <h1 className="experience">Work Experience</h1>
-        <Experience />
+        <Experience 
+            formData = {experienceInfo}
+            setFormData = {setExperienceInfo}
+        />
         <Document 
-            info={basicInfo}
+            basicInfo={basicInfo}
+            educationInfo={educationInfo}
+            experienceInfo={experienceInfo}
         />
     </div>
     )

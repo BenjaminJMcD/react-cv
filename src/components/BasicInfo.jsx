@@ -36,32 +36,32 @@ function BasicInfo ({formData, setFormData}) {
     return (
         <div>
             <form onSubmit={handleSubmit}>
-                <label htmlFor="firstName">First Name: </label>
+                <label htmlFor="basicFirst">First Name: </label>
                 <input type="text"
-                    className="firstName"
+                    id="basicFirst"
                     name = "firstName"
                     required
                     value = {formData.firstName}
                     onChange={handleChange} />
-                <label htmlFor="lastName">Last Name: </label>
+                <label htmlFor="basicLast">Last Name: </label>
                 <input type="text"
-                    className="lastName"
+                    id="basicLast"
                     name="lastName"
                     required
                     value = {formData.lastName}
                     onChange={handleChange} />
-                <label htmlFor="email">Email: </label>
+                <label htmlFor="basicEmail">Email: </label>
                 <input type="email"
-                    className="email"
+                    id="basicEmail"
                     name="email"
                     required
                     value = {formData.email}
                     onChange = {handleChange} />
-                <label htmlFor="phone">Phone: </label>
+                <label htmlFor="basicPhone">Phone: </label>
                 <input type="tel"
                     placeholder="(123) 456 7890"
                     pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}"
-                    className="phoneNumber"
+                    id="basicPhone"
                     required
                     name="phone"
                     value = {formData.phone}

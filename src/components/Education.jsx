@@ -1,15 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-function Education() {
-
-    const [formData, setFormData]=useState({
-        school: "",
-        degreeTitle: "",
-        degree: false,
-        startDate: "mm/dd/yyyy",
-        endDate: "mm/dd/yyyy"
-    })
+function Education({formData, setFormData}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -27,32 +19,32 @@ function Education() {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="school">School: </label>
+            <label htmlFor="educationSchool">School: </label>
             <input type="text"
-                className="school"
+                id="educationSchool"
                 name = "school"
                 required
                 value = {formData.school}
                 onChange={handleChange} />
-            <label htmlFor="degreeTitle">Study: </label>
+            <label htmlFor="educationStudy">Study: </label>
             <input type="text" 
-                className="degreeTitle"
-                name="degreeTitle"
-                value = {formData.degreeTitle}
+                id="educationStudy"
+                name="study"
+                value = {formData.study}
                 onChange={handleChange} />
-            <label htmlFor="degree">Degree Obtained: </label>
+            <label htmlFor="educationDegree">Degree Obtained: </label>
             <input type="checkbox" 
-                className="degree" 
+                id="educationDegree"
                 name="degree"
                 onClick = {handleClick} />
-            <label htmlFor="startDate">Start Date: </label>
+            <label htmlFor="educationStart">Start Date: </label>
             <input type="date"
-                className="startDate"
+                id="educationStart"
                 name="startDate"
                 onChange={handleChange}/>
-            <label htmlFor="endDate">End Date: </label>
+            <label htmlFor="educationEnd">End Date: </label>
             <input type="date"
-                className="endDate"
+                id="educationEnd"
                 name="endDate"
                 onChange={handleChange} />
             <button className="submitButton" type="submit">SUBMIT</button>

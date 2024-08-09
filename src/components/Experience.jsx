@@ -1,15 +1,7 @@
 import React from "react";
 import { useState } from "react";
 
-function Experience() {
-
-    const [formData, setFormData]=useState({
-        company: "",
-        position: "",
-        responsibilities: "",
-        startDate: "mm/dd/yyyy",
-        endDate: "mm/dd/yyyy"
-    })
+function Experience({formData, setFormData}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -22,32 +14,32 @@ function Experience() {
 
     return (
         <form onSubmit={handleSubmit}>
-            <label htmlFor="company">Company: </label>
+            <label htmlFor="expCompany">Company: </label>
             <input type="text"
-                className="company"
+                id="expCompany"
                 name = "company"
                 value = {formData.company}
                 onChange={handleChange} />
-            <label htmlFor="position">Position: </label>
+            <label htmlFor="expPosition">Position: </label>
             <input type="text" 
-                className="position"
+                id="expPosition"
                 name="position"
                 value = {formData.position}
                 onChange={handleChange} />
-            <label htmlFor="responsibilities">Responsibilities: </label>
+            <label htmlFor="expResponsibilities">Responsibilities: </label>
             <input type="text" 
-                className="responsibilities" 
+                id="expResponsibilities" 
                 name="responsibilities"
                 value={formData.responsibilities}
                 onChange = {handleChange} />
-            <label htmlFor="startDate">Start Date: </label>
+            <label htmlFor="expStart">Start Date: </label>
             <input type="date"
-                className="startDate"
+                id="expStart"
                 name="startDate"
                 onChange={handleChange}/>
-            <label htmlFor="endDate">End Date: </label>
+            <label htmlFor="expEnd">End Date: </label>
             <input type="date"
-                className="endDate"
+                id="expEnd"
                 name="endDate"
                 onChange={handleChange} />
             <button className="submitButton" type="submit">SUBMIT</button>
