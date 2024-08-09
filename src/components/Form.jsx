@@ -41,6 +41,7 @@ function Form() {
             formData = {educationInfo}
             setFormData = {setEducationInfo}
         />
+
         <h1 className="experience">Work Experience</h1>
         <Experience 
             formData = {experienceInfo}
@@ -58,6 +59,8 @@ function Form() {
 export default Form
 
 
+
 // ADD MULTIPLE EDUCATION AND WORK EXPERIENCE ???
+//   ----> 
 
 // HOW TO EDIT DOCUMENT ON FORM PAGE WITH INFORMATION FROM CHILDREN +++ HOW TO CREATE DOCUMENT ON FORM PAGE NEXT TO FORMS

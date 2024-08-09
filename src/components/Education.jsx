@@ -1,18 +1,18 @@
 import React from "react";
 import { useState } from "react";
+import saveEducationArr from "./saveEducation";
 
 function Education({formData, setFormData}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log("Form Submitted", formData);
+        saveEducationArr(formData);
     }
 
     const handleChange = (event) => {
         setFormData({...formData, [event.target.name]: event.target.value})
     }
 
-    
     const handleClick = (event) => {
         setFormData({...formData, [event.target.name]: event.target.checked})
     }
@@ -52,14 +52,12 @@ function Education({formData, setFormData}) {
                 id="educationStart"
                 name="startDate"
                 onChange={handleDate}
-                value={formData.startDate}
             />
             <label htmlFor="educationEnd">End Date: </label>
             <input type="date"
                 id="educationEnd"
                 name="endDate"
-                onChange={handleDate} 
-                value={formData.endDate}/>
+                onChange={handleDate} />
             <button className="submitButton" type="submit">SUBMIT</button>
         </form>
     )
