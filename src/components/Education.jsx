@@ -17,6 +17,16 @@ function Education({formData, setFormData}) {
         setFormData({...formData, [event.target.name]: event.target.checked})
     }
 
+    const handleDate = (event) => {
+
+        let date = event.target.value;
+        let year = date.slice(0,4);
+        let monthDay = date.slice(5);
+        let dateFormat = date.concat(monthDay+"-"+year);
+
+        setFormData({...formData, [event.target.name]: dateFormat.slice(10)})
+    }
+
     return (
         <form onSubmit={handleSubmit}>
             <label htmlFor="educationSchool">School: </label>
@@ -41,12 +51,15 @@ function Education({formData, setFormData}) {
             <input type="date"
                 id="educationStart"
                 name="startDate"
-                onChange={handleChange}/>
+                onChange={handleDate}
+                value={formData.startDate}
+            />
             <label htmlFor="educationEnd">End Date: </label>
             <input type="date"
                 id="educationEnd"
                 name="endDate"
-                onChange={handleChange} />
+                onChange={handleDate} 
+                value={formData.endDate}/>
             <button className="submitButton" type="submit">SUBMIT</button>
         </form>
     )

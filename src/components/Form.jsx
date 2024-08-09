@@ -35,7 +35,6 @@ function Form() {
         <BasicInfo
             formData = {basicInfo}
             setFormData = {setBasicInfo}
-
         />
         <h1 className="education">Education</h1>
         <Education

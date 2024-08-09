@@ -12,6 +12,16 @@ function Experience({formData, setFormData}) {
         setFormData({...formData, [event.target.name]: event.target.value})
     }
 
+    const handleDate = (event) => {
+
+        let date = event.target.value;
+        let year = date.slice(0,4);
+        let monthDay = date.slice(5);
+        let dateFormat = date.concat(monthDay+"-"+year);
+
+        setFormData({...formData, [event.target.name]: dateFormat.slice(10)})
+    }
+
     return (
         <form onSubmit={handleSubmit}>
             <label htmlFor="expCompany">Company: </label>
@@ -36,12 +46,12 @@ function Experience({formData, setFormData}) {
             <input type="date"
                 id="expStart"
                 name="startDate"
-                onChange={handleChange}/>
+                onChange={handleDate}/>
             <label htmlFor="expEnd">End Date: </label>
             <input type="date"
                 id="expEnd"
                 name="endDate"
-                onChange={handleChange} />
+                onChange={handleDate} />
             <button className="submitButton" type="submit">SUBMIT</button>
         </form>
     )
