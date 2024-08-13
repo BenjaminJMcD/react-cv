@@ -13,6 +13,7 @@ function Education({formData, setFormData}) {
         setFormData({...formData, [event.target.name]: event.target.value})
     }
 
+
     const handleClick = (event) => {
         setFormData({...formData, [event.target.name]: event.target.checked})
     }

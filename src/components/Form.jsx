@@ -4,6 +4,7 @@ import BasicInfo from "./BasicInfo";
 import Education from "./Education";
 import Experience from "./Experience";
 import Document from "./Document";
+import saveEducationArr from "./saveEducation";
 
 function Form() {
 
@@ -29,6 +30,18 @@ function Form() {
     });
 
 
+    const addEducation = () => {
+
+
+    }
+
+
+
+    const removeEducation = () => {
+
+    }
+
+
     return (
     <div>
         <h1 className="basicInfo">General Information</h1>
@@ -37,21 +50,32 @@ function Form() {
             setFormData = {setBasicInfo}
         />
         <h1 className="education">Education</h1>
-        <Education
-            formData = {educationInfo}
-            setFormData = {setEducationInfo}
-        />
-
+        <div id="edBox">
+            <Education
+                formData = {educationInfo}
+                setFormData = {setEducationInfo}
+            />
+        </div>
+            <button className="addEd"
+                onClick={addEducation}>
+                Add Education</button>
+            <button className="removeEd"
+                onClick={removeEducation}>
+                Remove</button>
         <h1 className="experience">Work Experience</h1>
         <Experience 
             formData = {experienceInfo}
             setFormData = {setExperienceInfo}
-        />
+        /> 
+
+        {/*
+            NEED NEW APP.JSX FOR FORM AND FOR DOCUMENT
+
         <Document 
             basicInfo={basicInfo}
             educationInfo={educationInfo}
             experienceInfo={experienceInfo}
-        />
+        /> */}
     </div>
     )
 }
@@ -60,7 +84,5 @@ export default Form
 
 
 
-// ADD MULTIPLE EDUCATION AND WORK EXPERIENCE ???
-//   ----> 
-
-// HOW TO EDIT DOCUMENT ON FORM PAGE WITH INFORMATION FROM CHILDREN +++ HOW TO CREATE DOCUMENT ON FORM PAGE NEXT TO FORMS
+//  HOLD INFO UNTIL SUBMIT, THEN SAVE IN ARRAY AS OBJECT
+//  MAP INTO DOCUMENT FROM OBJECT
