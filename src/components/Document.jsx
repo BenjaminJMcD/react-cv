@@ -1,14 +1,17 @@
 import React from "react";
-import { useState } from "react";
 
-const Document = ({basicInfo, educationInfo, experienceInfo}) => {
+const Document = ({displayBasic, basicInfo, educationInfo, experienceInfo}) => {
 
     return (
         <div>
-            <p>{basicInfo.firstName}</p>
-            <p>{basicInfo.lastName}</p>
-            <p>{basicInfo.email}</p>
-            <p>{basicInfo.phone}</p>
+            {displayBasic ? 
+            <div>
+                <p>{basicInfo.firstName}</p>
+                <p>{basicInfo.lastName}</p>
+                <p>{basicInfo.email}</p>
+                <p>{basicInfo.phone}</p>
+            </div>
+            : ""}
             <p>{educationInfo.school}</p>
             <p>{educationInfo.study}</p>
             <p>{educationInfo.degree}</p>

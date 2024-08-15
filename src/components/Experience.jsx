@@ -37,7 +37,7 @@ function Experience({experienceInfo, setExperienceInfo}) {
                 value = {experienceInfo.position}
                 onChange={handleChange} />
             <label htmlFor="expResponsibilities">Responsibilities: </label>
-            <input type="text" 
+            <textarea rows="4" cols="50"
                 id="expResponsibilities" 
                 name="responsibilities"
                 value={experienceInfo.responsibilities}

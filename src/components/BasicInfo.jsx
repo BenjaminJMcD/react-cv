@@ -1,12 +1,15 @@
 import React from "react"
 
 
-function BasicInfo ({basicInfo, setBasicInfo}) {
+function BasicInfo ({basicInfo, setBasicInfo, setDisplayBasic}) {
+
+    
 
 
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log("Form Submitted", basicInfo);
+        setDisplayBasic(true);
     }
 
     const handleChange = (event) => {

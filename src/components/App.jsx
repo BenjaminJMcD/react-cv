@@ -27,17 +27,23 @@ function App() {
         endDate: ""
     });
 
+    const [displayBasic, setDisplayBasic] = useState(false);
+
+    console.log(displayBasic);
+
     return (
         <div>
             <Form 
                 basicInfo={basicInfo}
                 setBasicInfo={setBasicInfo}
+                setDisplayBasic={setDisplayBasic}
                 educationInfo={educationInfo}
                 setEducationInfo={setEducationInfo}
                 experienceInfo={experienceInfo}
                 setExperienceInfo={setExperienceInfo}
             />
             <Document 
+                displayBasic={displayBasic}
                 basicInfo={basicInfo}
                 educationInfo={educationInfo}
                 experienceInfo={experienceInfo}
