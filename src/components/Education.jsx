@@ -1,21 +1,19 @@
 import React from "react";
 import { useState } from "react";
-import saveEducationArr from "./saveEducation";
 
-function Education({formData, setFormData}) {
+function Education({educationInfo, setEducationInfo}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        saveEducationArr(formData);
     }
 
     const handleChange = (event) => {
-        setFormData({...formData, [event.target.name]: event.target.value})
+        setEducationInfo({...educationInfo, [event.target.name]: event.target.value})
     }
 
 
     const handleClick = (event) => {
-        setFormData({...formData, [event.target.name]: event.target.checked})
+        setEducationInfo({...educationInfo, [event.target.name]: event.target.checked})
     }
 
     const handleDate = (event) => {
@@ -25,7 +23,7 @@ function Education({formData, setFormData}) {
         let monthDay = date.slice(5);
         let dateFormat = date.concat(monthDay+"-"+year);
 
-        setFormData({...formData, [event.target.name]: dateFormat.slice(10)})
+        setEducationInfo({...educationInfo, [event.target.name]: dateFormat.slice(10)})
     }
 
     return (
@@ -35,13 +33,13 @@ function Education({formData, setFormData}) {
                 id="educationSchool"
                 name = "school"
                 required
-                value = {formData.school}
+                value = {educationInfo.school}
                 onChange={handleChange} />
             <label htmlFor="educationStudy">Study: </label>
             <input type="text" 
                 id="educationStudy"
                 name="study"
-                value = {formData.study}
+                value = {educationInfo.study}
                 onChange={handleChange} />
             <label htmlFor="educationDegree">Degree Obtained: </label>
             <input type="checkbox" 

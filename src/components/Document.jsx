@@ -2,6 +2,7 @@ import React from "react";
 import { useState } from "react";
 
 const Document = ({basicInfo, educationInfo, experienceInfo}) => {
+
     return (
         <div>
             <p>{basicInfo.firstName}</p>

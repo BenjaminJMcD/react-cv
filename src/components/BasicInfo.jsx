@@ -1,22 +1,21 @@
 import React from "react"
-import { useState } from "react"
-import Document from "./Document"
 
 
-function BasicInfo ({formData, setFormData}) {
+function BasicInfo ({basicInfo, setBasicInfo}) {
+
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log("Form Submitted", formData);
+        console.log("Form Submitted", basicInfo);
     }
 
     const handleChange = (event) => {
-        setFormData({...formData, [event.target.name]: event.target.value})
+        setBasicInfo(prevInfo => ({...prevInfo, [event.target.name]: event.target.value}))
     }
 
     const handleInput = (event) => {
         const formattedPhoneNumber = formatPhoneNumber(event.target.value);
-        setFormData({...formData, [event.target.name]: formattedPhoneNumber})
+        setBasicInfo({...basicInfo, [event.target.name]: formattedPhoneNumber})
     }
 
     function formatPhoneNumber(value) {
@@ -41,21 +40,21 @@ function BasicInfo ({formData, setFormData}) {
                     id="basicFirst"
                     name = "firstName"
                     required
-                    value = {formData.firstName}
+                    value = {basicInfo.firstName}
                     onChange={handleChange} />
                 <label htmlFor="basicLast">Last Name: </label>
                 <input type="text"
                     id="basicLast"
                     name="lastName"
                     required
-                    value = {formData.lastName}
+                    value = {basicInfo.lastName}
                     onChange={handleChange} />
                 <label htmlFor="basicEmail">Email: </label>
                 <input type="email"
                     id="basicEmail"
                     name="email"
                     required
-                    value = {formData.email}
+                    value = {basicInfo.email}
                     onChange = {handleChange} />
                 <label htmlFor="basicPhone">Phone: </label>
                 <input type="tel"
@@ -64,7 +63,7 @@ function BasicInfo ({formData, setFormData}) {
                     id="basicPhone"
                     required
                     name="phone"
-                    value = {formData.phone}
+                    value = {basicInfo.phone}
                     onChange={handleInput}
                      />
                 <button className="submitButton" type="submit">SUBMIT</button>
