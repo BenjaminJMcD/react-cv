@@ -28,6 +28,9 @@ function App() {
     });
 
     const [displayBasic, setDisplayBasic] = useState(false);
+    const [displayEducation, setDisplayEducation] = useState(false);
+    const [displayExperience, setDisplayExperience] = useState(false);
+
 
     console.log(displayBasic);
 
@@ -39,14 +42,18 @@ function App() {
                 setDisplayBasic={setDisplayBasic}
                 educationInfo={educationInfo}
                 setEducationInfo={setEducationInfo}
+                setDisplayEducation={setDisplayEducation}
                 experienceInfo={experienceInfo}
                 setExperienceInfo={setExperienceInfo}
+                setDisplayExperience={setDisplayExperience}
             />
             <Document 
-                displayBasic={displayBasic}
                 basicInfo={basicInfo}
+                displayBasic={displayBasic}
                 educationInfo={educationInfo}
+                displayEducation={displayEducation}
                 experienceInfo={experienceInfo}
+                displayExperience={displayExperience}
             />
         </div>
     )

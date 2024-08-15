@@ -1,11 +1,12 @@
 import React from "react";
 import { useState } from "react";
 
-function Experience({experienceInfo, setExperienceInfo}) {
+function Experience({experienceInfo, setExperienceInfo, setDisplayExperience}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
         console.log("Form Submitted", experienceInfo);
+        setDisplayExperience(true);
     }
 
     const handleChange = (event) => {

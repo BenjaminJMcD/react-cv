@@ -1,10 +1,10 @@
 import React from "react";
-import { useState } from "react";
 
-function Education({educationInfo, setEducationInfo}) {
+function Education({educationInfo, setEducationInfo, setDisplayEducation}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
+        setDisplayEducation(true);
     }
 
     const handleChange = (event) => {

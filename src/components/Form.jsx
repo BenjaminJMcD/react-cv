@@ -4,7 +4,7 @@ import BasicInfo from "./BasicInfo";
 import Education from "./Education";
 import Experience from "./Experience";
 
-function Form({basicInfo, educationInfo, experienceInfo, setBasicInfo, setEducationInfo, setExperienceInfo, setDisplayBasic}) {
+function Form({basicInfo, educationInfo, experienceInfo, setBasicInfo, setEducationInfo, setExperienceInfo, setDisplayBasic, setDisplayEducation, setDisplayExperience}) {
 
 
     const [edAmount, setEdAmount] = useState("")
@@ -36,6 +36,7 @@ function Form({basicInfo, educationInfo, experienceInfo, setBasicInfo, setEducat
             <Education
                 educationInfo = {educationInfo}
                 setEducationInfo = {setEducationInfo}
+                setDisplayEducation={setDisplayEducation}
             />
         </div>
             <button className="addEd"
@@ -48,6 +49,7 @@ function Form({basicInfo, educationInfo, experienceInfo, setBasicInfo, setEducat
         <Experience 
             experienceInfo = {experienceInfo}
             setExperienceInfo = {setExperienceInfo}
+            setDisplayExperience={setDisplayExperience}
         />
     </div>
     )
