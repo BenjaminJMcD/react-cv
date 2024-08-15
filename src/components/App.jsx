@@ -32,8 +32,6 @@ function App() {
     const [displayExperience, setDisplayExperience] = useState(false);
 
 
-    console.log(displayBasic);
-
     return (
         <div>
             <Form 
