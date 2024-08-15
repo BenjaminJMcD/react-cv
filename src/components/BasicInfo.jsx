@@ -10,7 +10,7 @@ function BasicInfo ({basicInfo, setBasicInfo}) {
     }
 
     const handleChange = (event) => {
-        setBasicInfo(prevInfo => ({...prevInfo, [event.target.name]: event.target.value}))
+        setBasicInfo(basicInfo => ({...basicInfo, [event.target.name]: event.target.value}))
     }
 
     const handleInput = (event) => {

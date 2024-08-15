@@ -44,10 +44,10 @@ function Form({basicInfo, educationInfo, experienceInfo, setBasicInfo, setEducat
                 onClick={removeEducation}>
                 Remove</button>
         <h1 className="experience">Work Experience</h1>
-        {/* <Experience 
-            formData = {experienceInfo}
-            setFormData = {setExperienceInfo}
-        /> */}
+        <Experience 
+            experienceInfo = {experienceInfo}
+            setExperienceInfo = {setExperienceInfo}
+        />
     </div>
     )
 }

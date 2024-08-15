@@ -1,15 +1,15 @@
 import React from "react";
 import { useState } from "react";
 
-function Experience({formData, setFormData}) {
+function Experience({experienceInfo, setExperienceInfo}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log("Form Submitted", formData);
+        console.log("Form Submitted", experienceInfo);
     }
 
     const handleChange = (event) => {
-        setFormData({...formData, [event.target.name]: event.target.value})
+        setExperienceInfo({...experienceInfo, [event.target.name]: event.target.value})
     }
 
     const handleDate = (event) => {
@@ -19,7 +19,7 @@ function Experience({formData, setFormData}) {
         let monthDay = date.slice(5);
         let dateFormat = date.concat(monthDay+"-"+year);
 
-        setFormData({...formData, [event.target.name]: dateFormat.slice(10)})
+        setExperienceInfo({...experienceInfo, [event.target.name]: dateFormat.slice(10)})
     }
 
     return (
@@ -28,19 +28,19 @@ function Experience({formData, setFormData}) {
             <input type="text"
                 id="expCompany"
                 name = "company"
-                value = {formData.company}
+                value = {experienceInfo.company}
                 onChange={handleChange} />
             <label htmlFor="expPosition">Position: </label>
             <input type="text" 
                 id="expPosition"
                 name="position"
-                value = {formData.position}
+                value = {experienceInfo.position}
                 onChange={handleChange} />
             <label htmlFor="expResponsibilities">Responsibilities: </label>
             <input type="text" 
                 id="expResponsibilities" 
                 name="responsibilities"
-                value={formData.responsibilities}
+                value={experienceInfo.responsibilities}
                 onChange = {handleChange} />
             <label htmlFor="expStart">Start Date: </label>
             <input type="date"
