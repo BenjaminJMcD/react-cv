@@ -4,12 +4,18 @@ const Document = ({ basicInfo, educationInfo, experienceInfo, displayBasic, disp
 
 
     function handleDate (date) {
-        console.log(date)
-        let year = date.slice(0,4);
-        let monthDay = date.slice(5);
-        let dateFormat = monthDay+"-"+year;
-        console.log(dateFormat)
-        return dateFormat
+        if (displayEducation) {
+            let year = date.slice(0,4);
+            let monthDay = date.slice(5);
+            let dateFormat = monthDay+"-"+year;
+            return dateFormat
+        }
+        if (displayExperience) {
+            let year = date.slice(0,4);
+            let monthDay = date.slice(5);
+            let dateFormat = monthDay+"-"+year;
+            return dateFormat
+        }
     }
 
     let startEd = handleDate(educationInfo.startDate);

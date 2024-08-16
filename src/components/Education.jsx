@@ -1,6 +1,6 @@
 import React from "react";
 
-function Education({educationInfo, setEducationInfo, setDisplayEducation}) {
+function Education({educationInfo, setEducationInfo, setDisplayEducation, index}) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -8,14 +8,13 @@ function Education({educationInfo, setEducationInfo, setDisplayEducation}) {
     }
 
     const handleChange = (event) => {
-        setEducationInfo({...educationInfo, [event.target.name]: event.target.value})
+        setEducationInfo({...educationInfo[index], [event.target.name]: event.target.value})
     }
 
 
     const handleClick = (event) => {
-        setEducationInfo({...educationInfo, [event.target.name]: event.target.checked})
+        setEducationInfo({...educationInfo[index], [event.target.name]: event.target.checked})
     }
-
 
 
     return (
@@ -39,18 +38,21 @@ function Education({educationInfo, setEducationInfo, setDisplayEducation}) {
             <input type="checkbox" 
                 id="educationDegree"
                 name="degree"
+                value= {educationInfo.degree}
                 onClick = {handleClick} 
             />
             <label htmlFor="educationStart">Start Date: </label>
             <input type="date"
                 id="educationStart"
                 name="startDate"
+                value={educationInfo.startDate}
                 onChange={handleChange}
             />
             <label htmlFor="educationEnd">End Date: </label>
             <input type="date"
                 id="educationEnd"
                 name="endDate"
+                value= {educationInfo.endDate}
                 onChange={handleChange} 
             />
             <button className="submitButton" type="submit">SUBMIT</button>

@@ -7,14 +7,13 @@ import Experience from "./Experience";
 function Form({basicInfo, educationInfo, experienceInfo, setBasicInfo, setEducationInfo, setExperienceInfo, setDisplayBasic, setDisplayEducation, setDisplayExperience}) {
 
 
-    const [edAmount, setEdAmount] = useState("")
-    // SaveEducation Array.length
-
+    const [edAmount, setEdAmount] = useState(educationInfo.length || 1);
 
     const addEducation = () => {
-
-
-    }
+        const newEducationInfo = [educationInfo, {}];
+        setEducationInfo(newEducationInfo);
+        setEdAmount(newEducationInfo.length)
+    };
 
 
 
@@ -33,11 +32,17 @@ function Form({basicInfo, educationInfo, experienceInfo, setBasicInfo, setEducat
         />
         <h1 className="education">Education</h1>
         <div id="edBox">
-            <Education
-                educationInfo = {educationInfo}
-                setEducationInfo = {setEducationInfo}
-                setDisplayEducation={setDisplayEducation}
-            />
+            {
+                Array.from({length: edAmount}).map((curr, index) => 
+                    <Education 
+                        key={index}
+                        index={index}
+                        educationInfo={educationInfo}
+                        setEducationInfo={setEducationInfo}
+                        setDisplayEducation={setDisplayEducation}
+                    />
+                )
+            }
         </div>
             <button className="addEd"
                 onClick={addEducation}>
