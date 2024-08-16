@@ -12,13 +12,13 @@ function App() {
         email: "",
         phone: ""
     });
-    const [educationInfo, setEducationInfo] = useState({
+    const [educationInfo, setEducationInfo] = useState([{
         school: "",
         study: "",
         degree: false,
         startDate: "",
         endDate: ""
-    });
+    }]);
     const [experienceInfo, setExperienceInfo] = useState({
         company: "",
         position: "",
@@ -30,7 +30,6 @@ function App() {
     const [displayBasic, setDisplayBasic] = useState(false);
     const [displayEducation, setDisplayEducation] = useState(false);
     const [displayExperience, setDisplayExperience] = useState(false);
-
 
     return (
         <div>
