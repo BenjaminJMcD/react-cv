@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function FormComponent({ onFormSubmit }) {
+function NewEducation({ onFormSubmit }) {
 
 
   const [formData, setFormData] = useState({
@@ -103,4 +103,4 @@ function FormComponent({ onFormSubmit }) {
   );
 }
 
-export default FormComponent
+export default NewEducation
