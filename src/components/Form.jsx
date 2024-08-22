@@ -10,12 +10,11 @@ function Form({basicInfo, educationInfo, experienceInfo, setBasicInfo, setEducat
     const [edAmount, setEdAmount] = useState(educationInfo.length || 1);
 
     const addEducation = () => {
-        const newEducationInfo = [educationInfo, {}];
-        setEducationInfo(newEducationInfo);
-        setEdAmount(newEducationInfo.length)
+        const newEducation = educationInfo.length + 1;
+        setEducationInfo((educationInfo) => [...educationInfo, {}])
     };
 
-
+    console.log(educationInfo[1])
 
     const removeEducation = () => {
 
