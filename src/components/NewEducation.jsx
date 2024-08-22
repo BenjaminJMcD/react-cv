@@ -4,12 +4,11 @@ function NewEducation({ onFormSubmit }) {
 
 
   const [formData, setFormData] = useState({
-    // Initialize input values here
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: ''
-    // ... other inputs
+    school: '',
+    study: '',
+    degree: false,
+    startDate: '',
+    endDate: '',
   });
 
   const handleChange = (event) => {
@@ -22,67 +21,53 @@ function NewEducation({ onFormSubmit }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();   
-
-    // Handle form submission here, e.g., send data to server
     onFormSubmit(formData);
   };
 
-  const handleInput = (event) => {
-    const formattedPhoneNumber = formatPhoneNumber(event.target.value);
-    setFormData((prevFormData) => ({
-      ...prevFormData, 
-      [event.target.name]: formattedPhoneNumber
-    }))
-  }
-
-  function formatPhoneNumber(value) {
-    if (!value) return value;
-    const phoneNumber = value.replace(/[^\d]/g,"");
-    const phoneNumberLength = phoneNumber.length;
-
-    if (phoneNumberLength < 4) {
-        return phoneNumber
-    }
-    if (phoneNumberLength < 7) {
-        return `(${phoneNumber.slice(0, 3)}) ${phoneNumber.slice(3)}`
-    }
-    return `(${phoneNumber.slice(0,3)}) ${phoneNumber.slice(3,6)}-${phoneNumber.slice(6,10)}`
+  const handleClick = (event) => {
+    setFormData((prevFormData) => ({...prevFormData, [event.target.name]: event.target.checked}))
 }
+
 
   return (
     <form onSubmit={handleSubmit}>
-    <label htmlFor="basicFirst">First Name: </label>
-    <input type="text"
-        id="basicFirst"
-        name = "firstName"
-        required
-        value = {formData.firstName}
-        onChange={handleChange} />
-    <label htmlFor="basicLast">Last Name: </label>
-    <input type="text"
-        id="basicLast"
-        name="lastName"
-        required
-        value = {formData.lastName}
-        onChange={handleChange} />
-    <label htmlFor="basicEmail">Email: </label>
-    <input type="email"
-        id="basicEmail"
-        name="email"
-        required
-        value = {formData.email}
-        onChange = {handleChange} />
-    <label htmlFor="basicPhone">Phone: </label>
-    <input type="tel"
-        placeholder="(123) 456 7890"
-        pattern="\([0-9]{3}\) [0-9]{3}-[0-9]{4}"
-        id="basicPhone"
-        required
-        name="phone"
-        value = {formData.phone}
-        onChange={handleInput}
-         />
-    <button className="submitButton" type="submit">SUBMIT</button>
+      <label htmlFor="educationSchool">School: </label>
+      <input type="text"
+          id="educationSchool"
+          name = "school"
+          required
+          value = {formData.school}
+          onChange={handleChange} 
+      />
+      <label htmlFor="educationStudy">Study: </label>
+      <input type="text" 
+          id="educationStudy"
+          name="study"
+          value = {formData.study}
+          onChange={handleChange} 
+      />
+      <label htmlFor="educationDegree">Degree Obtained: </label>
+      <input type="checkbox" 
+          id="educationDegree"
+          name="degree"
+          value= {formData.degree}
+          onClick = {handleClick} 
+      />
+      <label htmlFor="educationStart">Start Date: </label>
+      <input type="date"
+          id="educationStart"
+          name="startDate"
+          value={formData.startDate}
+          onChange={handleChange}
+      />
+      <label htmlFor="educationEnd">End Date: </label>
+      <input type="date"
+          id="educationEnd"
+          name="endDate"
+          value= {formData.endDate}
+          onChange={handleChange} 
+      />
+      <button className="submitButton" type="submit">SUBMIT</button>
 </form>
 
 
