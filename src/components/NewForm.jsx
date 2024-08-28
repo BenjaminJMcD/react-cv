@@ -28,17 +28,18 @@ function NewForm() {
 
     const handleAddEdForm = () => {
         const newFormId = edForms.length + 1;
-        setEdForms((prevForms) => [...prevForms, { id: newFormId, data: {} }]);
+        setEdForms((prevForm) => [...prevForm, { id: newFormId, data: {} }]);
+        console.log("CLICKED")
     };
 
 
-    const handleRemoveForm = (form, setForm) => {
-        if (form.length > 1) {
-            setForm((prevForms) => prevForms.filter((form) => form.id  !== form.length));
+    const handleRemoveEdForm = (formId) => {
+        if (edForms.length > 1) {
+            setEdForm((prevForms) => prevForms.filter((edForms) => edForms.id  !== formId));
         }
     };
 
-    console.log(edForms);
+    console.log(edForms)
 
     const [displayBasic, setDisplayBasic] = useState(false);
     const [displayEducation, setDisplayEducation] = useState(false);
@@ -56,8 +57,8 @@ function NewForm() {
                     onFormSubmit={(data) => handleFormSubmit(data, edForm.id)}
                 />
             ))}
-            <button onClick={handleAddEdForm}>Add School</button>
-            <button onClick={handleRemoveForm(edForms, setEdForms)}>Remove</button>
+            <button onClick={() => handleAddEdForm()}>Add Education</button>
+            <button onClick={() => handleRemoveEdForm(edForms.length)}>Remove</button>
 
             {/* {expForms.map((expForm) => {
                 <NewExperience 
