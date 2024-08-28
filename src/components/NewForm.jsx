@@ -22,20 +22,26 @@ function NewForm() {
 
     const handleFormSubmit = (formData, formId) => {
         console.log(`Form ${formId} submitted:`, formData);
-        setEdForms([{id: formId, data: formData}]);
+        if (edForms.length == 1) {
+        setEdForms([{ id: formId, data: formData}])
+        }
+        if (edForms.length > 1) {
+            edForms.length = edForms.length-1
+            setEdForms((prevForms) => [ ...prevForms, { id: formId, data: formData}])
+        }
     };
 
 
     const handleAddEdForm = () => {
         const newFormId = edForms.length + 1;
-        setEdForms((prevForm) => [...prevForm, { id: newFormId, data: {} }]);
+        setEdForms((prevForms) => [...prevForms, { id: newFormId, data: {} }]);
         console.log("CLICKED")
     };
 
 
     const handleRemoveEdForm = (formId) => {
         if (edForms.length > 1) {
-            setEdForm((prevForms) => prevForms.filter((edForms) => edForms.id  !== formId));
+            setEdForms((prevForms) => prevForms.filter((edForms) => edForms.id  !== formId));
         }
     };
 
