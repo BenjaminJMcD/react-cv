@@ -20,7 +20,7 @@ function NewEducation({ onFormSubmit }) {
   };
 
   const handleSubmit = (event) => {
-    event.preventDefault();   
+    event.preventDefault();
     onFormSubmit(formData);
   };
 
