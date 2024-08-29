@@ -26,26 +26,22 @@ function NewForm() {
         setEdForms([{ id: formId, data: formData}])
         }
         if (edForms.length > 1) {
-            edForms.length = edForms.length-1
-            setEdForms((prevForms) => [ ...prevForms, { id: formId, data: formData}])
+            let newEd = [...edForms];
+            newEd.splice(formId-1, 1, {id: formId, data: formData})
+            setEdForms(newEd)
         }
     };
-
 
     const handleAddEdForm = () => {
         const newFormId = edForms.length + 1;
         setEdForms((prevForms) => [...prevForms, { id: newFormId, data: {} }]);
-        console.log("CLICKED")
     };
-
 
     const handleRemoveEdForm = (formId) => {
         if (edForms.length > 1) {
-            setEdForms((prevForms) => prevForms.filter((edForms) => edForms.id  !== formId));
+            setEdForms((prevForms) => prevForms.filter((edForms) => edForms.id !== formId));
         }
     };
-
-    console.log(edForms)
 
     const [displayBasic, setDisplayBasic] = useState(false);
     const [displayEducation, setDisplayEducation] = useState(false);
