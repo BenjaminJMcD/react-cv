@@ -2,6 +2,9 @@ import React from "react";
 
 function NewDoc () {
 
+
+
+
 return (
     <div>
         {displayBasic ? 
@@ -30,3 +33,5 @@ return (
     </div>
 )
 }
+
+export default NewDoc

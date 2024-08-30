@@ -2,10 +2,16 @@ import React, { useState } from 'react';
 import NewBasic from './NewBasic';
 import NewEducation from './NewEducation';
 import NewExperience from './NewExperience';
+import BasicDoc from './BasicDoc';
+import EdDoc from './EdDoc';
+import ExpDoc from './ExpDoc';
 
 
 function NewForm() {
 
+    const [basicInfo, setBasicInfo] = useState(
+        { data: {}}
+    );
 
     const [edForms, setEdForms] = useState([
         { id: 1, data: {} }
@@ -17,7 +23,8 @@ function NewForm() {
 
 
     const handleBasicSubmit = (basicData) => {
-        console.log(`Form submitted:`, basicData);
+        setBasicInfo({data: basicData})
+        console.log(`Form submitted:`, basicInfo);
     };
 
     const handleEdFormSubmit = (formData, formId) => {
@@ -90,6 +97,13 @@ function NewForm() {
             ))}
             <button onClick={() => handleAddExpForm()}>Add Experience</button>
             <button onClick={() => handleRemoveExpForm(expForms.length)}>Remove</button>
+            {/* BASIC DOC */}
+            <BasicDoc
+                basicInfo={basicInfo.data}
+            />
+            {/* EDUCATION DOC */}
+
+            {/* EXPERIENCE DOC */}
         </div>
   );
 }
