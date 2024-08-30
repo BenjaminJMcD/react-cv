@@ -11,24 +11,36 @@ function NewForm() {
         { id: 1, data: {} }
     ]);
 
-    // const [expForms, setExpForms] = useState([
-    //     { id: 1, data: {} }
-    // ])
+    const [expForms, setExpForms] = useState([
+        { id: 1, data: {} }
+    ])
 
 
     const handleBasicSubmit = (basicData) => {
         console.log(`Form submitted:`, basicData);
     };
 
-    const handleFormSubmit = (formData, formId) => {
+    const handleEdFormSubmit = (formData, formId) => {
         console.log(`Form ${formId} submitted:`, formData);
         if (edForms.length == 1) {
-        setEdForms([{ id: formId, data: formData}])
+            setEdForms([{ id: formId, data: formData}])
         }
         if (edForms.length > 1) {
             let newEd = [...edForms];
             newEd.splice(formId-1, 1, {id: formId, data: formData})
             setEdForms(newEd)
+        }
+    };
+
+    const handleExpFormSubmit = (formData, formId) => {
+        console.log(`Form ${formId} submitted:`, formData);
+        if (expForms.length == 1) {
+            setExpForms([{ id: formId, data: formData}])
+        }
+        if (expForms.length > 1) {
+            let newExp = [...expForms];
+            newExp.splice(formId-1, 1, {id: formId, data: formData})
+            setExpForms(newExp)
         }
     };
 
@@ -43,33 +55,41 @@ function NewForm() {
         }
     };
 
-    const [displayBasic, setDisplayBasic] = useState(false);
-    const [displayEducation, setDisplayEducation] = useState(false);
-    const [displayExperience, setDisplayExperience] = useState(false);
+    const handleAddExpForm = () => {
+        const newFormId = expForms.length + 1;
+        setExpForms((prevForms) => [...prevForms, { id: newFormId, data: {} }]);
+    };
+
+    const handleRemoveExpForm = (formId) => {
+        if (expForms.length > 1) {
+            setExpForms((prevForms) => prevForms.filter((expForms) => expForms.id !== formId));
+        }
+    };
 
     return (
         <div>
+            {/* BASIC INFO */}
             <NewBasic
                 onFormSubmit={(data) => handleBasicSubmit(data)}
             />
-
+            {/* EDUCATION FORMS */}
             {edForms.map((edForm) => (
                 <NewEducation
                     key={edForm.id}
-                    onFormSubmit={(data) => handleFormSubmit(data, edForm.id)}
+                    onFormSubmit={(data) => handleEdFormSubmit(data, edForm.id)}
                 />
             ))}
             <button onClick={() => handleAddEdForm()}>Add Education</button>
             <button onClick={() => handleRemoveEdForm(edForms.length)}>Remove</button>
-
-            {/* {expForms.map((expForm) => {
+            {/* EXPERIENCE FORMS */}
+            {expForms.map((expForm) => (
                 <NewExperience 
-                key={expForm.id}
-                onFormSubmit={(data) => handleFormSubmit(data, expForm.id)}
+                    key={expForm.id}
+                    onFormSubmit={(data) => handleExpFormSubmit(data, expForm.id)}
                 />
-            })}
-            <button onClick={() => handleAddForm(expForms, setExpForms)}>Add Form</button>
-            <button onClick={handleRemoveForm(expForms, setExpForms)}>Remove</button> */}
+            ))}
+            <button onClick={() => handleAddExpForm()}>Add Experience</button>
+            <button onClick={() => handleRemoveExpForm(expForms.length)}>Remove</button>
         </div>
   );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 
-function NewDoc (formData, displayFormData ) {
+function NewDoc () {
 
 return (
     <div>
@@ -16,16 +16,16 @@ return (
             <p>{educationInfo.school}</p>
             <p>{educationInfo.study}</p>
             <p>{educationInfo.degree}</p>
-            {/* <p>{startEd}</p>
-            <p>{endEd}</p> */}
+            <p>{startEd}</p>
+            <p>{endEd}</p>
         </div> : ""}
         {displayExperience ?
         <div>
             <p>{experienceInfo.company}</p>
             <p>{experienceInfo.position}</p>
             <p>{experienceInfo.responsibilities}</p>
-            {/* <p>{startExp}</p>
-            <p>{endExp}</p> */}
+            <p>{startExp}</p>
+            <p>{endExp}</p>
         </div> : ""}
     </div>
 )
