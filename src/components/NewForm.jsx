@@ -102,8 +102,19 @@ function NewForm() {
                 basicInfo={basicInfo.data}
             />
             {/* EDUCATION DOC */}
-
+            {edForms.map((edForm) => (
+                <EdDoc
+                    key={edForm.id}
+                    educationInfo={edForm.data}
+                />
+            ))}
             {/* EXPERIENCE DOC */}
+            {expForms.map((expForm) => (
+                <ExpDoc
+                    key={expForm.id}
+                    experienceInfo={expForm.data}
+                />
+            ))}
         </div>
   );
 }
