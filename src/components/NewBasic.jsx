@@ -7,7 +7,8 @@ function NewBasic({ onFormSubmit }) {
     firstName: '',
     lastName: '',
     email: '',
-    phone: ''
+    phone: '',
+    description: ''
   });
 
   const handleChange = (event) => {
@@ -77,6 +78,12 @@ function NewBasic({ onFormSubmit }) {
             name="phone"
             value = {formData.phone}
             onChange={handleInput} />
+        <label htmlFor="basicDescription">About Me: </label>
+        <textarea rows="5" cols="50"
+            id="basicDescription"
+            name="description"
+            value = {formData.description}
+            onChange={handleChange} />
         <button className="submitButton" type="submit">SUBMIT</button>
     </form>
   )

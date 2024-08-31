@@ -41,7 +41,7 @@ function NewExperience({ onFormSubmit }) {
           onChange={handleChange} 
       />
       <label htmlFor="expResponsibilities">Responsibilities: </label>
-      <textarea rows="4" cols="50"
+      <textarea rows= "4" cols="50"
           id="expResponsibilities" 
           name="responsibilities"
           value={formData.responsibilities}

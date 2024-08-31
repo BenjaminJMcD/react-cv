@@ -8,6 +8,7 @@ function BasicDoc({ basicInfo }) {
             <p>{basicInfo.lastName}</p>
             <p>{basicInfo.email}</p>
             <p>{basicInfo.phone}</p>
+            <p>{basicInfo.description}</p>
         </div>
     )
 
