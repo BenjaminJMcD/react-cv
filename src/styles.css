@@ -1,0 +1,50 @@
+.pageHeader {
+    text-align:center;
+    margin-top: 50px;
+}
+
+.formsSideBar {
+    width: 30%;
+    float:left;
+    margin-left: 2%;
+}
+
+.basicInfoHeader {
+
+}
+
+#basicInfoForm {
+    display:grid;
+    border:2px solid black;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+
+
+
+#educationForm {
+    display:grid;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+
+
+#experienceForm {
+    display:grid;
+    border: 2px solid black;
+    border-radius: 20px;
+    padding: 20px;
+}
+
+
+.cvDocument {
+    width: 40%;
+    float:right;
+    margin-top: 100px;
+    border: 2px solid black;
+    padding: 20px;
+    margin-right: 4%;
+}

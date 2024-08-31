@@ -30,7 +30,7 @@ function NewEducation({ onFormSubmit }) {
 
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} id="educationForm">
       <label htmlFor="educationSchool">School: </label>
       <input type="text"
           id="educationSchool"

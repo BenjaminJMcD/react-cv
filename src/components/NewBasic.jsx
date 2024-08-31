@@ -4,12 +4,10 @@ function NewBasic({ onFormSubmit }) {
 
 
   const [formData, setFormData] = useState({
-    // Initialize input values here
     firstName: '',
     lastName: '',
     email: '',
     phone: ''
-    // ... other inputs
   });
 
   const handleChange = (event) => {
@@ -22,7 +20,6 @@ function NewBasic({ onFormSubmit }) {
 
   const handleSubmit = (event) => {
     event.preventDefault();   
-    // Handle form submission here, e.g., send data to server
     onFormSubmit(formData);
   };
 
@@ -49,7 +46,7 @@ function NewBasic({ onFormSubmit }) {
 }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} id="basicInfoForm">
         <label htmlFor="basicFirst">First Name: </label>
         <input type="text"
             id="basicFirst"
@@ -79,12 +76,10 @@ function NewBasic({ onFormSubmit }) {
             required
             name="phone"
             value = {formData.phone}
-            onChange={handleInput}
-        />
+            onChange={handleInput} />
         <button className="submitButton" type="submit">SUBMIT</button>
     </form>
   )
-
 }
 
 export default NewBasic

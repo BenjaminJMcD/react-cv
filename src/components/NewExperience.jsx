@@ -25,7 +25,7 @@ function NewExperience({ onFormSubmit }) {
 
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} id="experienceForm">
       <label htmlFor="expCompany">Company: </label>
       <input type="text"
           id="expCompany"

@@ -75,46 +75,52 @@ function NewForm() {
 
     return (
         <div>
-            {/* BASIC INFO */}
-            <NewBasic
-                onFormSubmit={(data) => handleBasicSubmit(data)}
-            />
-            {/* EDUCATION FORMS */}
-            {edForms.map((edForm) => (
-                <NewEducation
-                    key={edForm.id}
-                    onFormSubmit={(data) => handleEdFormSubmit(data, edForm.id)}
+            <h1 className="pageHeader">Create Your CV</h1>
+            <div className="formsSideBar">
+                {/* BASIC INFO */}
+                <h2 className="basicInfoHeader">General Information</h2>
+                <NewBasic
+                    onFormSubmit={(data) => handleBasicSubmit(data)}
                 />
-            ))}
-            <button onClick={() => handleAddEdForm()}>Add Education</button>
-            <button onClick={() => handleRemoveEdForm(edForms.length)}>Remove</button>
-            {/* EXPERIENCE FORMS */}
-            {expForms.map((expForm) => (
-                <NewExperience 
-                    key={expForm.id}
-                    onFormSubmit={(data) => handleExpFormSubmit(data, expForm.id)}
+                {/* EDUCATION FORMS */}
+                {edForms.map((edForm) => (
+                    <NewEducation
+                        key={edForm.id}
+                        onFormSubmit={(data) => handleEdFormSubmit(data, edForm.id)}
+                    />
+                ))}
+                <button onClick={() => handleAddEdForm()}>Add Education</button>
+                <button onClick={() => handleRemoveEdForm(edForms.length)}>Remove</button>
+                {/* EXPERIENCE FORMS */}
+                {expForms.map((expForm) => (
+                    <NewExperience
+                        key={expForm.id}
+                        onFormSubmit={(data) => handleExpFormSubmit(data, expForm.id)}
+                    />
+                ))}
+                <button onClick={() => handleAddExpForm()}>Add Experience</button>
+                <button onClick={() => handleRemoveExpForm(expForms.length)}>Remove</button>
+            </div>
+            <div className="cvDocument">
+                {/* BASIC DOC */}
+                <BasicDoc
+                    basicInfo={basicInfo.data}
                 />
-            ))}
-            <button onClick={() => handleAddExpForm()}>Add Experience</button>
-            <button onClick={() => handleRemoveExpForm(expForms.length)}>Remove</button>
-            {/* BASIC DOC */}
-            <BasicDoc
-                basicInfo={basicInfo.data}
-            />
-            {/* EDUCATION DOC */}
-            {edForms.map((edForm) => (
-                <EdDoc
-                    key={edForm.id}
-                    educationInfo={edForm.data}
-                />
-            ))}
-            {/* EXPERIENCE DOC */}
-            {expForms.map((expForm) => (
-                <ExpDoc
-                    key={expForm.id}
-                    experienceInfo={expForm.data}
-                />
-            ))}
+                {/* EDUCATION DOC */}
+                {edForms.map((edForm) => (
+                    <EdDoc
+                        key={edForm.id}
+                        educationInfo={edForm.data}
+                    />
+                ))}
+                {/* EXPERIENCE DOC */}
+                {expForms.map((expForm) => (
+                    <ExpDoc
+                        key={expForm.id}
+                        experienceInfo={expForm.data}
+                    />
+                ))}
+            </div>
         </div>
   );
 }
