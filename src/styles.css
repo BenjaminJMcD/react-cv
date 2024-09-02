@@ -1,42 +1,78 @@
+
+/* PAGE */
 .pageHeader {
     text-align:center;
     margin-top: 50px;
 }
 
+/* FORM SIDEBAR */
 .formsSideBar {
     width: 30%;
     float:left;
     margin-left: 2%;
 }
 
-.basicInfoHeader {
-
+.formHeader {
+    margin-left: 8px;
+    margin-bottom: 0px;
 }
 
+label {
+    margin-top: 10px;
+}
+
+.submitButton {
+    width: 100px;
+    border-radius: 4px;
+    height: 30px;
+    font-size: 17px;
+    margin-top: 16px;
+    background-color: skyblue;
+    box-shadow: 4px 4px gray;
+    margin-left: 190px;
+}
+
+input {
+    font-size: 16px;
+    padding: 4px;
+}
+
+.addRemoveBtns {
+    width: 50%;
+    height: 32px;
+    font-size: 16px;
+    background-color: skyblue;
+}
+
+
+/* BASIC FORM */
 #basicInfoForm {
     display:grid;
     border:2px solid black;
-    border-radius: 20px;
     padding: 20px;
+    padding-top: 10px;
+    font-size:20px;
 }
 
 
 
-
+/* ED FORM */
 #educationForm {
     display:grid;
     border: 2px solid black;
-    border-radius: 20px;
     padding: 20px;
+    padding-top: 10px;
+    font-size:20px;
 }
 
 
-
+/* EXP FORM */
 #experienceForm {
     display:grid;
     border: 2px solid black;
-    border-radius: 20px;
     padding: 20px;
+    padding-top: 10px;
+    font-size:20px;
 }
 
 

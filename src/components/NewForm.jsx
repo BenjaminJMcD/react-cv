@@ -78,28 +78,30 @@ function NewForm() {
             <h1 className="pageHeader">Create Your CV</h1>
             <div className="formsSideBar">
                 {/* BASIC INFO */}
-                <h2 className="basicInfoHeader">General Information</h2>
+                <h2 className="formHeader">General Information</h2>
                 <NewBasic
                     onFormSubmit={(data) => handleBasicSubmit(data)}
                 />
                 {/* EDUCATION FORMS */}
+                <h2 className="formHeader">Education</h2>
                 {edForms.map((edForm) => (
                     <NewEducation
                         key={edForm.id}
                         onFormSubmit={(data) => handleEdFormSubmit(data, edForm.id)}
                     />
                 ))}
-                <button onClick={() => handleAddEdForm()}>Add Education</button>
-                <button onClick={() => handleRemoveEdForm(edForms.length)}>Remove</button>
+                <button className="addRemoveBtns" onClick={() => handleAddEdForm()}>Add Education</button>
+                <button className="addRemoveBtns" onClick={() => handleRemoveEdForm(edForms.length)}>Remove</button>
                 {/* EXPERIENCE FORMS */}
+                <h2 className="formHeader">Experience</h2>
                 {expForms.map((expForm) => (
                     <NewExperience
                         key={expForm.id}
                         onFormSubmit={(data) => handleExpFormSubmit(data, expForm.id)}
                     />
                 ))}
-                <button onClick={() => handleAddExpForm()}>Add Experience</button>
-                <button onClick={() => handleRemoveExpForm(expForms.length)}>Remove</button>
+                <button className="addRemoveBtns" onClick={() => handleAddExpForm()}>Add Experience</button>
+                <button className="addRemoveBtns" onClick={() => handleRemoveExpForm(expForms.length)}>Remove</button>
             </div>
             <div className="cvDocument">
                 {/* BASIC DOC */}

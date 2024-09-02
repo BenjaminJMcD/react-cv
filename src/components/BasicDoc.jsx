@@ -4,11 +4,13 @@ function BasicDoc({ basicInfo }) {
 
     return (
         <div>
-            <p>{basicInfo.firstName}</p>
-            <p>{basicInfo.lastName}</p>
-            <p>{basicInfo.email}</p>
-            <p>{basicInfo.phone}</p>
-            <p>{basicInfo.description}</p>
+            <p className="firstNameDoc">{basicInfo.firstName}</p>
+            <p className="lastNameDoc">{basicInfo.lastName}</p>
+            <div className="contactInfoDoc">
+                <p>{basicInfo.email}</p>
+                <p>{basicInfo.phone}</p>
+            </div>
+            <p className="descriptionDoc">{basicInfo.description}</p>
         </div>
     )
 
