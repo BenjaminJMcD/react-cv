@@ -6,6 +6,9 @@ function NewBasic({ onFormSubmit }) {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
+    title: '',
+    linkedIn: '',
+    gitHub: '',
     email: '',
     phone: '',
     description: ''
@@ -62,6 +65,25 @@ function NewBasic({ onFormSubmit }) {
             required
             value = {formData.lastName}
             onChange={handleChange} />
+        <label htmlFor="basicTitle">Title: </label>
+        <input type="text"
+            id="basicTitle"
+            name="title"
+            required
+            value = {formData.title}
+            onChange={handleChange} />
+        <label htmlFor="basicLinkedIn">LinkedIn: </label>
+        <input type="text"
+            id="basicTitle"
+            name="linkedIn"
+            value = {formData.linkedIn}
+            onChange={handleChange} />
+        <label htmlFor="basicGithub">Github: </label>
+        <input type="text"
+            id="basicGithub"
+            name="gitHub"
+            value = {formData.gitHub}
+            onChange={handleChange} />
         <label htmlFor="basicEmail">Email: </label>
         <input type="email"
             id="basicEmail"
@@ -78,7 +100,7 @@ function NewBasic({ onFormSubmit }) {
             name="phone"
             value = {formData.phone}
             onChange={handleInput} />
-        <label htmlFor="basicDescription">About Me: </label>
+        <label htmlFor="basicDescription">Summary: </label>
         <textarea rows="5" cols="50"
             id="basicDescription"
             name="description"

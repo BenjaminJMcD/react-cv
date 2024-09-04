@@ -54,7 +54,15 @@ input {
     font-size:20px;
 }
 
+.fullName {
+    font-size: 40px;
+    margin-bottom: 0px;
+}
 
+.title {
+    font-size: 32px;
+    margin-top: 0px;
+}
 
 /* ED FORM */
 #educationForm {
@@ -76,11 +84,13 @@ input {
 }
 
 
+/* MAIN DOCUMENT */
 .cvDocument {
     width: 50%;
     float:right;
-    margin-top: 100px;
+    margin-top: 80px;
     border: 2px solid black;
     padding: 20px;
     margin-right: 4%;
 }
+
