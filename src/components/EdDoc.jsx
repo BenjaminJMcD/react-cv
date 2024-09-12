@@ -12,11 +12,18 @@ function EdDoc({ educationInfo }) {
 
     return (
         <div>
-            <p>{educationInfo.school}</p>
-            <p>{educationInfo.study}</p>
-            <p>{educationInfo.degree}</p>
-            <p>{startDate}</p>
-            <p>{endDate}</p>
+            {educationInfo.school &&
+                <div className="educationInfoDoc">
+                    <p className="schoolDoc">{educationInfo.school}</p>
+                    <div className="educationDates">
+                        <p className="edDates">
+                            {startDate} ---- {endDate}
+                        </p>
+                    </div>
+                    <p className="studyDoc">{educationInfo.study}</p>
+                    <p className="degreeTitleDoc">{educationInfo.degreeTitle}</p>
+                </div>
+            }
         </div>
     )
 

@@ -12,11 +12,18 @@ function ExpDoc({ experienceInfo }) {
 
     return (
         <div>
-            <p>{experienceInfo.company}</p>
-            <p>{experienceInfo.position}</p>
-            <p>{experienceInfo.responsibilities}</p>
-            <p>{startDate}</p>
-            <p>{endDate}</p>
+            {experienceInfo.company &&
+                <div className="experienceInfoDoc">
+                    <p className="companyDoc">{experienceInfo.company}</p>
+                    <div className="experienceDates">
+                        <p className="expDates">
+                            {startDate} ---- {endDate}
+                        </p>
+                    </div>
+                    <p className="experienceDoc">{experienceInfo.position}</p>
+                    <p className="responsibilitiesDoc">{experienceInfo.responsibilities}</p>
+                </div>
+            }
         </div>
     )
 

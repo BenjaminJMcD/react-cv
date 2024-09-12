@@ -73,6 +73,8 @@ function NewForm() {
         }
     };
 
+    console.log(edForms[0].data.school)
+
     return (
         <div>
             <h1 className="pageHeader">Create Your CV</h1>
@@ -109,6 +111,9 @@ function NewForm() {
                     basicInfo={basicInfo.data}
                 />
                 {/* EDUCATION DOC */}
+                {edForms[0].data.school &&
+                    <h1 className="educationHeader">Education</h1>
+                }
                 {edForms.map((edForm) => (
                     <EdDoc
                         key={edForm.id}
@@ -116,6 +121,9 @@ function NewForm() {
                     />
                 ))}
                 {/* EXPERIENCE DOC */}
+                {expForms[0].data.company &&
+                    <h1 className="experienceHeader">Experience</h1>
+                }
                 {expForms.map((expForm) => (
                     <ExpDoc
                         key={expForm.id}

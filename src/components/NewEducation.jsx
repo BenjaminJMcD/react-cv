@@ -7,6 +7,7 @@ function NewEducation({ onFormSubmit }) {
     school: '',
     study: '',
     degree: false,
+    degreeTitle: '',
     startDate: '',
     endDate: '',
   });
@@ -53,6 +54,17 @@ function NewEducation({ onFormSubmit }) {
           value= {formData.degree}
           onClick = {handleClick} 
       />
+      {formData.degree && 
+        <div className="degreeTitle">
+          <label htmlFor="degreeTitle">Degree: </label>
+          <input type="text"
+            id="degreeTitle"
+            name="degreeTitle"
+            value={formData.degreeTitle}
+            onChange={handleChange}
+          />
+        </div>
+      }
       <label htmlFor="educationStart">Start Date: </label>
       <input type="date"
           id="educationStart"
@@ -68,23 +80,7 @@ function NewEducation({ onFormSubmit }) {
           onChange={handleChange} 
       />
       <button className="submitButton" type="submit">SUBMIT</button>
-</form>
-
-
-
-
-    // <form onSubmit={handleSubmit}>
-    //   {/* Input fields */}
-    //   <input
-    //     type="text"
-    //     name="name"
-    //     value={formData.name}
-    //     onChange={handleChange}
-    //     placeholder="Name"
-    //   />
-    //   {/* ... other input fields */}
-    //   <button type="submit">Submit</button>
-    // </form>
+    </form>
   );
 }
 
