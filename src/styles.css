@@ -134,19 +134,25 @@ input {
 
 /* DOCUMENT EDUCATION */
 
-.educationInfoDoc {
-
-}
-
 .educationHeader {
-
+    margin-bottom: 0px;
 }
 
-.schoolDoc {
+.educationInfoDoc {
+    margin-left: 60px;
+    font-size: 24px;
+}
 
+.schoolAndDates {
+    display: flex;
+    height: 30px;
+    justify-content: space-between;
+    margin-right: 60px;
 }
 
 .studyDoc {
-    
+    margin: 20px;
 }
+
+/* DOCUMENT EXPERIENCE */
 

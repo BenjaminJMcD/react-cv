@@ -14,8 +14,8 @@ function EdDoc({ educationInfo }) {
         <div>
             {educationInfo.school &&
                 <div className="educationInfoDoc">
+                    <div className="schoolAndDates">
                     <p className="schoolDoc">{educationInfo.school}</p>
-                    <div className="educationDates">
                         <p className="edDates">
                             {startDate} ---- {endDate}
                         </p>
