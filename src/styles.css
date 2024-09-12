@@ -95,7 +95,7 @@ input {
 
 .basicHeader {
     display:grid;
-    grid-template: 100px 100px / 70% 30%;
+    grid-template: 100px 60px / 70% 30%;
 }
 
 .fullName {
@@ -124,12 +124,16 @@ input {
     font-size: 32px;
     margin-bottom: 0px;
     margin-top: 0px;
+    margin-left: 20px;
 }
 
 .descriptionDoc {
     word-wrap: break-word;
     width: 95%;
-    margin: auto;
+    margin-left: 40px;
+    margin-top: 0px;
+    font-size: 18px;
+
 }
 
 /* DOCUMENT EDUCATION */
@@ -151,8 +155,35 @@ input {
 }
 
 .studyDoc {
-    margin: 20px;
+    margin: 24px;
 }
 
 /* DOCUMENT EXPERIENCE */
 
+.experienceHeader {
+    margin-bottom: 0px;
+}
+
+.experienceInfoDoc {
+    margin-left: 60px;
+    font-size: 24px;
+}
+
+.companyAndDates {
+    display: flex;
+    height: 30px;
+    justify-content: space-between;
+    margin-right: 60px;
+}
+
+.positionDoc {
+    margin-top: 24px;
+    margin-left: 24px;
+    margin-bottom: 0px;
+}
+
+.responsibilitiesDoc {
+    margin-right: 80px;
+    margin-left: 40px;
+    font-size: 18px;
+}

@@ -14,13 +14,13 @@ function ExpDoc({ experienceInfo }) {
         <div>
             {experienceInfo.company &&
                 <div className="experienceInfoDoc">
-                    <p className="companyDoc">{experienceInfo.company}</p>
-                    <div className="experienceDates">
+                    <div className="companyAndDates">
+                        <p className="companyDoc">{experienceInfo.company}</p>
                         <p className="expDates">
                             {startDate} ---- {endDate}
                         </p>
                     </div>
-                    <p className="experienceDoc">{experienceInfo.position}</p>
+                    <p className="positionDoc">{experienceInfo.position}</p>
                     <p className="responsibilitiesDoc">{experienceInfo.responsibilities}</p>
                 </div>
             }
